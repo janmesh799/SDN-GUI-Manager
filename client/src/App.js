@@ -5,14 +5,16 @@ import {
   Route
 } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
-import Home from './Components/Home/Home';
+import Switches from './Components/Switches/Switches.jsx';
+import FlowTable from './Components/Flowtable/FlowTable.jsx'
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Switches />}></Route>
+        <Route path="/flowtable" element={<FlowTable />}></Route>
       </Routes>
     </Router>
   );

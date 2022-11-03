@@ -5,6 +5,7 @@ const router = express.Router();
 router.post("/", async(req, res) => {
     const url = req.headers.url;
     const data = req.body;
+    console.log(url,data)
     try {
         const config = {
             headers: {

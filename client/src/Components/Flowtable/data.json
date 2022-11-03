@@ -1,0 +1,58 @@
+[
+    {
+      "switch_id": "0000000000000002",
+      "access_control_list": [
+        {
+          "rules": [
+            {
+              "rule_id": 1,
+              "priority": 1,
+              "dl_type": "IPv6",
+              "ipv6_src": "fe80::200:ff:fe00:3",
+              "ipv6_dst": "fe80::200:ff:fe00:4",
+              "nw_proto": "ICMPv6",
+              "actions": "ALLOW"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "switch_id": "0000000000000004",
+      "access_control_list": []
+    },
+    {
+      "switch_id": "0000000000000006",
+      "access_control_list": []
+    },
+    {
+      "switch_id": "0000000000000003",
+      "access_control_list": [
+        {
+          "rules": [
+            {
+              "rule_id": 1,
+              "priority": 1,
+              "dl_type": "IPv6",
+              "ipv6_src": "fe80::200:ff:fe00:3",
+              "ipv6_dst": "fe80::200:ff:fe00:4",
+              "nw_proto": "ICMPv6",
+              "actions": "ALLOW"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "switch_id": "0000000000000001",
+      "access_control_list": []
+    },
+    {
+      "switch_id": "0000000000000007",
+      "access_control_list": []
+    },
+    {
+      "switch_id": "0000000000000005",
+      "access_control_list": []
+    }
+  ]
