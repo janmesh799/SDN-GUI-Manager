@@ -11,7 +11,7 @@ const Navbar = () => {
     <div style={{ backgroundColor: "black", display: "flex", flexDirection: "row", justifyContent: "space-between", alignContent: "center" }}>
       <div style={{ color: "white", display: "flex", flexDirection: "row", alignSelf: "center" }}>
         <RouterIcon sx={{ margin: "0em 0.5rem" }} fontSize="large" />
-        <Typography variant="h4">SDN Dashboard</Typography>
+        <Typography variant="h4">SDN GUI Manager</Typography>
       </div>
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
 

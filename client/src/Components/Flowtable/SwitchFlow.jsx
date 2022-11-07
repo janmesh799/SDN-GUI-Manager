@@ -36,19 +36,19 @@ const SwitchFlow = (props) => {
     const handleChange = (e) => {
         setrule({ ...rule, [e.target.id]: e.target.value })
     }
-    const handleSubmit = async ()=>{
+    const handleSubmit = async () => {
         Object.keys(rule).forEach(key => {
             if (rule[key] === '') {
-              delete rule[key];
+                delete rule[key];
             }
-          });
-        
+        });
+
         const config = {
-            headers:{
-                url:`http://localhost:8080/firewall/rules/${data.switch_id}`
+            headers: {
+                url: `http://localhost:8080/firewall/rules/${data.switch_id}`
             }
         }
-        const res = await axios.post("http://localhost:5000/post",rule,config);
+        const res = await axios.post("http://localhost:5000/post", rule, config);
         handleClose();
         window.location.reload();
 
@@ -173,12 +173,17 @@ const SwitchFlow = (props) => {
                                         actions
                                     </b>
                                     </TableCell>
+                                    <TableCell component="th" scope="row"><b>
+
+                                        Delete
+                                    </b>
+                                    </TableCell>
 
                                 </TableRow>
                             </TableHead>
                             <TableBody>
 
-                                {data.access_control_list.length > 0 ? <Tablerow data={data.access_control_list[0].rules} /> : (<div>
+                                {data.access_control_list.length > 0 ? <Tablerow switch_id={data.switch_id} data={data.access_control_list[0].rules} /> : (<div>
                                     <Typography sx={{ textAlign: "center" }} >No rules to list</Typography>
                                 </div>)
                                 }
@@ -190,8 +195,18 @@ const SwitchFlow = (props) => {
         </div>
     )
 }
-const Tablerow = (props) => {
+const Tablerow = (props) => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     const arr = props.data;
+    const switch_id = props.switch_id;
+    const handleDelete = async () => {
+        const data = {
+            url:`http://localhost:8080/firewall/rules/${switch_id}`,
+            rule_id: props.data[0].rule_id
+        }
+       
+        const res = await axios.delete("http://localhost:5000/delete",{data});
+        window.location.reload();
+    }
     return (
 
         arr.map((row) => (
@@ -242,7 +257,9 @@ const Tablerow = (props) => {
                 <TableCell component="th" scope="row">
                     {row.actions}
                 </TableCell>
-
+                <TableCell>
+                    <Button onClick={handleDelete} variant="contained" color="error">Delete</Button>
+                </TableCell>
             </TableRow>
         ))
     )

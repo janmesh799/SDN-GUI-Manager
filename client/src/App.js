@@ -5,7 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
-import Switches from './Components/Switches/Switches.jsx';
+import Home from './Components/Home/Home.jsx';
 import FlowTable from './Components/Flowtable/FlowTable.jsx'
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Switches />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/flowtable" element={<FlowTable />}></Route>
       </Routes>
     </Router>
